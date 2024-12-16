@@ -2,8 +2,10 @@ const simButton = document.getElementById('sim');
     const naoButton = document.getElementById('nao');
     const pedidoDiv = document.getElementById('pedido');
     const animacaoDiv = document.getElementById('animacao');
-    const senhaDiv = document.getElementById('senha');
-    const inputCode = document.getElementById("input-code")
+    const perguntaUmDiv = document.getElementById('pergunta-um');
+    const firstInput = document.getElementById("first-input")
+    const inputs = document.querySelectorAll('.input-container input');
+    const button = document.getElementById('send');
 
     // Função para mover o botão "Não" aleatoriamente
     function moverBotaoNao() {
@@ -45,31 +47,54 @@ const simButton = document.getElementById('sim');
     // Aceitou
     simButton.addEventListener('click', () => {
       pedidoDiv.style.display = 'none';
-      animacaoDiv.style.display = 'none';
-      senhaDiv.style.display = 'block';
-      inputCode.focus();
+      perguntaUmDiv.style.display = 'flex';
+      firstInput.focus();
       clearTimeout(timer);
     });
 
-    //Pressiona enter
-    inputCode.addEventListener("keypress", function(event) {
-        let code = inputCode.value.toUpperCase();
-        // If the user presses the "Enter" key on the keyboard
-        if (event.key === "Enter") {
-          // Cancel the default action, if needed
-          event.preventDefault();
-          // Trigger the button element with a click
-          if(code === "TEAMO"){
-            senhaDiv.style.display = 'none';
-            animacaoDiv.style.display = 'block';
-            // Define o fundo da tela com imagem ou gradiente
-    document.body.style.backgroundImage = "url('/hearts.gif')";
-          }else{
-            alert("Senha incorreta amor");
-            inputCode.value = "";
-          }
-        }
+   // Move entre os campos ao digitar ou apagar
+   inputs.forEach((input, index) => {
+    input.addEventListener('input', () => {
+
+      if (input.value && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !input.value && index > 0) {
+        inputs[index - 1].focus();
+      }
+      if (e.key === 'Enter') {
+        send();
+      }
+    });
+  });
+
+ 
+
+  // Botão para capturar e verificar o texto digitado
+  button.addEventListener('click', send)
+  
+  // Captura e verifica texto digitado
+  function send() {
+    let text = '';
+    inputs.forEach(input => {
+      text += input.value; // Concatena o valor de cada campo
+    });
+
+    // Verifica texto digitado
+    if(text.toUpperCase() === "TEAMO"){
+      perguntaUmDiv.style.display = 'none';
+      animacaoDiv.style.display = 'block';
+    }else{
+      alert("Resposta incorreta gatinha: " + text);
+      inputs.forEach(input => {
+        input.value = '';
+        firstInput.focus();
       });
+    };
+  };
 
     // Move o botão "Não" ao passar o cursor próximo
     document.addEventListener('mousemove', (e) => {

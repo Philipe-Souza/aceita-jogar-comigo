@@ -15,20 +15,26 @@
             <button id="sim" class="botao">Sim</button>
             <button id="nao" class="botao">Não</button>
         </div>
-        <div id="senha" class="senha">
+        <div id="pergunta-um" class="pergunta-um">
             <h1>Para aceitar encontre a senha no quarto</h1>
             <div class="input-container">
-                <div class="dash">_ _ _ _ _</div>
-                <input id="input-code" class="input-code" type="text" maxlength="5" autocomplete="off">
+                <input id="first-input" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
             </div>
+            <button id="send">
+                Enviar
+            </button>
         </div>
         <div id="animacao" class="animacao">
             <h1>Teamo Stefany</h1>
-            <video src="video.mp4" autoplay loop>
+            <video src="content/video.mp4" autoplay loop>
                 <p>
-                  Erro ao carregar o video
+                    Erro ao carregar o video
                 </p>
-              </video>
+            </video>
         </div>
     </main>
     <script src="script.js"></script>

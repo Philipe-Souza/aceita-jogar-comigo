@@ -8,16 +8,6 @@ body {
     overflow: hidden;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="#ff0080" d="M15 0C7.015 0 0 7.015 0 15s7.015 15 15 15 15-7.015 15-15S22.985 0 15 0zm-3.5 16.25c-1.15 0-2.125-.675-2.125-2.125 0-1.15.675-2.125 2.125-2.125 1.15 0 2.125.675 2.125 2.125 0 1.15-.675 2.125-2.125 2.125zm3.5-9c-1.15 0-2.125-.675-2.125-2.125 0-1.15.675-2.125 2.125-2.125 1.15 0 2.125.675 2.125 2.125 0 1.15-.675 2.125-2.125 2.125z"/></svg>'), auto; /* Define o coração como cursor */
     background-size: cover; /* Ajusta o fundo para cobrir a tela */
-    animation: fundo-animacao 10s linear infinite; /* Adiciona animação ao fundo */
-  }
-
-  @keyframes fundo-animacao {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
   }
 
   h1 {
@@ -90,7 +80,10 @@ body {
     margin-top: 50px;
     font-size: 24px;
     color: #ff0080;
-    animation: pulsar 2s infinite;
+  }
+
+  video {
+    width: 70%;
   }
 
   @keyframes pulsar {

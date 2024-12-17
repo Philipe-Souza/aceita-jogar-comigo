@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceita um joguinho?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <div id="aceita" class="aceita">
+            <h1>Quer jogar comigo?</h1>
+            <button id="sim" class="botao">Sim</button>
+            <button id="nao" class="botao">Não</button>
+        </div>
+
+        <div id="pergunta-um" class="pergunta">
+            <h1>A pergunta está no armario</h1>
+            <div class="inputs-um">
+                <input id="first-input" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+            <button id="enviar-um" style="display: none;" onclick="send('.inputs-um input', 'first-input', 'first-input-dois', 'SORRISO', 'pergunta-um', 'pergunta-dois')">
+                Enviar
+            </button>
+        </div>
+
+        <div id="pergunta-dois" class="pergunta">
+            <h1>A pergunta está na cozinha</h1>
+            <div class="inputs-dois">
+                <input id="first-input-dois" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+            <button id="enviar-dois" style="display: none;" onclick="send('.inputs-dois input', 'first-input-dois', 'first-input-tres', 'ANTONIA', 'pergunta-dois', 'pergunta-tres')">
+                Enviar
+            </button>
+        </div>
+
+        <div id="pergunta-tres" class="pergunta">
+            <h1>A pergunta está na sala</h1>
+            <div class="inputs-tres">
+                <input id="first-input-tres" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+            <button id="enviar-tres" style="display: none;" onclick="send('.inputs-tres input', 'first-input-tres', 'first-input-quatro', 'FAMILIA', 'pergunta-tres', 'pergunta-quatro')">
+                Enviar
+            </button>
+        </div>
+
+        <div id="pergunta-quatro" class="pergunta">
+            <h1>A pergunta está no banheiro</h1>
+            <div class="inputs-quatro">
+                <input id="first-input-quatro" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+            <button id="enviar-quatro" style="display: none;" onclick="send('.inputs-quatro input', 'first-input-quatro', 'first-input-cinco', '0909', 'pergunta-quatro', 'pergunta-cinco')">
+                Enviar
+            </button>
+        </div>
+
+        <div id="pergunta-cinco" class="pergunta">
+            <h1>A resposta está no quarto</h1>
+            <div class="inputs-cinco">
+                <input id="first-input-cinco" type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+            <button id="enviar-cinco" style="display: none;" onclick="send('.inputs-cinco input', 'first-input-cinco', 'aceitou', 'ACEITO', 'pergunta-cinco', 'aceitou')">
+                Enviar
+            </button>
+        </div>
+
+        <div id="aceitou" class="aceitou">
+            <h1>Teamo Stefany</h1>
+            <video id="video" src="content/video.mp4" loop>
+                <p>
+                    Erro ao carregar o video
+                </p>
+            </video>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

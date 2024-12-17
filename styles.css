@@ -95,7 +95,7 @@ body {
 
   video {
     padding-top: 20px;
-    height: 80vh;
+    height: 80%;
   }
 
   @keyframes pulsar {

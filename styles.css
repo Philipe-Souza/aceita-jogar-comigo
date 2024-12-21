@@ -21,7 +21,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 40px;
   }
 
   h1 {
@@ -33,7 +32,11 @@ body {
   .aceita {
     width: 100vw;
     text-align: center;
-    
+    padding-top: 40px;
+  }
+
+  .pergunta {
+    padding-top: 40px;
   }
 
   .botoes {
@@ -90,6 +93,7 @@ body {
   }
 
   .aceitou {
+    padding-top: 40px;
     display: none;
     flex-direction: column;
     justify-content: center;

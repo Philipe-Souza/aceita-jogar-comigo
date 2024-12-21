@@ -15,15 +15,24 @@ body {
     background-size: cover; /* Ajusta o fundo para cobrir a tela */
   }
 
+  main {
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   h1 {
     color: #ff0080;
-    margin-top: 100px;
     margin-bottom: 10px;
-    font-size: 36px;
+    font-size: 2rem;
   }
 
   .aceita {
-    margin-bottom: 50px;
+    width: 100vw;
+    text-align: center;
+    
   }
 
   .botoes {
@@ -82,20 +91,20 @@ body {
   .aceitou {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     height: 100vh;
-    font-size: 24px;
+    width: 100vw;
+    font-size: 2rem;
     color: #ff0080;
     background-image: url(content/hearts.gif);
     background-size: cover;
-  }
-
-  .aceitou h1 {
-    margin-top: 40px;
+    overflow: hidden;
   }
 
   video {
-    padding-top: 20px;
-    height: 80%;
+    height: 50%;
   }
 
   @keyframes pulsar {
